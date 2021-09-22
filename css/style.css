@@ -11,8 +11,9 @@ body {
 .controls-container {
     width: 100%;
     height: 70px;
-    background-color: brown;
+    background-color: #3D3D3D;
     display: flex;
+    justify-content: space-between;
 }
 
 .main-container-left {
@@ -21,16 +22,106 @@ body {
     display: flex;
     flex-direction: column;
     background-color: black;
+    padding: 10px 5px;
 }
 
 .main-container-left-middle {
     flex-grow: 1;
 }
 
-.nav-left-img {
-    width: 20%;
+.main-container-left a, .main-container-left img {
+    width: 100%;
+    padding: 5px 0;
 }
 
-.nav-left-img img {
+.profile-icon {
+    background-color: grey;
+}
+
+.controls-container > div {
+    display: flex;
+    font-size: 13px;
+    color: white;
+}
+
+.current-playing-song img {
+    width: 30%;
+    padding: 3px;
+}
+
+.current-playing-song, .volume-buttons {
+    width: 30%;
+    align-items: center;
+}
+
+.music-controls {
+    width: 60%;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: center;
+}
+
+.music-controls > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-play-circle {
+    font-size: 30px;
+}
+
+.music-controls-buttons {
+    padding-bottom: 3px;
+}
+
+.progress-bar, .volume-bar {
     width: 100%;
+    height: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgb(118, 118, 118);
+    position: relative;
+}
+
+.progress-bar-overlay, .volume-bar-overlay {
+    background-color: rgb(193, 193, 193);
+    width: 40%;
+    height: 100%;
+}
+
+.progress-bar-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(174, 174, 174);
+    position: absolute;
+    left: 35%;
+    transform: translateY(-70%);
+}
+
+.current-playing-song-text, .current-playing-song-buttons, .volume-buttons > i {
+    padding: 3px;
+}
+
+.current-playing-song-text span:first-child {
+    font-size: 11px;
+}
+
+.current-playing-song-text span:last-child, .current-playing-song-buttons {
+    color: rgb(118, 118, 118);
+}
+
+.current-playing-song-text span:last-child, .volume-buttons > i {
+    font-size: 9px;
+}
+
+
+
+/************* Media queries *************/
+
+@media screen and (max-width: 420px) {
+    .display-xs-none {
+        display: none;
+    }
 }

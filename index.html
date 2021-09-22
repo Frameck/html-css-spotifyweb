@@ -18,58 +18,61 @@
             <!-- container for the sidebar -->
             <div class="main-container-left">
                 <div class="main-container-left-top">
-                    <div></div>
-                    <div class="nav-left-img">
+                    <div class="nav-left-links">
+                        <a href="#">
+                            <img src="img/logo-small.svg" alt="spotify-logo">
+                        </a>
+
                         <a href="#">
                             <img src="img/home.svg" alt="home-icon">
-                            <span>Home</span>
+                            <span class="display-xs-none">Home</span>
                         </a>
-                    </div>
-                    <div>
+
                         <a href="#">
                             <img src="img/search.svg" alt="search-icon">
-                            <span>Cerca</span>
+                            <span class="display-xs-none">Cerca</span>
                         </a>
-                    </div>
-                    <div>
+
                         <a href="#">
                             <img src="img/libreria.svg" alt="library-icon">
-                            <span>La tua libreria</span>
+                            <span class="display-xs-none">La tua libreria</span>
                         </a>
                     </div>
                 </div>
 
                 <div class="main-container-left-middle">
-                    <h4>Playlist</h4>
-                    <div>
+                    <div class="display-xs-none">
+                        <h4>Playlist</h4>
                         <div>
-                            <i class="fas fa-plus"></i>
+                            <div>
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <span>Crea Playlist</span>
                         </div>
-                        <span>Crea Playlist</span>
+                        <ul>
+                            <li><a href="#">Nome Playlist</a></li>
+                            <li><a href="#">Nome Playlist</a></li>
+                            <li><a href="#">Nome Playlist</a></li>
+                            <li><a href="#">Nome Playlist</a></li>
+                            <li><a href="#">Nome Playlist</a></li>
+                            <li><a href="#">Nome Playlist</a></li>
+                            <li><a href="#">Nome Playlist</a></li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                    </ul>
                 </div>
 
                 <div class="main-container-left-bottom">
                     <div>
                         <a href="#">
                             <img src="img/download.svg" alt="download-icon">
-                            <span>Installa app</span>
+                            <span class="display-xs-none">Installa app</span>
                         </a>
                     </div>
-                    <hr>
+                    <hr class="display-xs-none">
                     <div>
                         <a href="#">
-                            <img src="img/profile.svg" alt="profile-icon">
-                            <span>John Doe</span>
+                            <img src="img/profile.svg" alt="profile-icon" class="profile-icon">
+                            <span class="display-xs-none">John Doe</span>
                         </a>
                     </div>
                 </div>
@@ -82,23 +85,23 @@
 
         <!-- container for music controls with static height at the bottom -->
         <div class="controls-container">
-            <div class="current-playing-song">
-                <div class="current-playing-song-album-cover">
-                    <img src="img/sinister.jpeg" alt="sinister-album-cover">
+            <div class="current-playing-song" style="border: 2px solid black;">
+                <img src="img/sinister.jpeg" alt="sinister-album-cover">
+                <div class="current-playing-song-text">
+                    <span>Sinister</span>
+                    <span>Brano Nome</span>
                 </div>
-                <span>Sinister</span>
-                <span>Brano Nome</span>
                 <div class="current-playing-song-buttons">
                     <i class="far fa-heart"></i>
                     <i class="far fa-folder"></i>
                 </div>
             </div>
 
-            <div class="music-controls">
+            <div class="music-controls" style="border: 2px solid black;">
                 <div class="music-controls-buttons">
                     <i class="fas fa-random"></i>
-                    <i class="far fa-play-circle"></i>
                     <i class="fas fa-step-backward"></i>
+                    <i class="far fa-play-circle"></i>
                     <i class="fas fa-step-forward"></i>
                     <i class="fas fa-redo"></i>
                 </div>
@@ -112,7 +115,7 @@
                 </div>
             </div>
 
-            <div class="volume-buttons">
+            <div class="volume-buttons" style="border: 2px solid black;">
                 <i class="fas fa-list"></i>
                 <i class="fas fa-tv"></i>
                 <i class="fas fa-volume-up"></i>
