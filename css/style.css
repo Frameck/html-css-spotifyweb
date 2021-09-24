@@ -49,12 +49,13 @@ body {
 
 .controls-container > div {
     display: flex;
+    justify-content: space-around;
     font-size: 13px;
     color: white;
 }
 
 .current-playing-song img {
-    width: 30%;
+    width: 30px;
     padding: 3px;
 }
 
@@ -68,11 +69,12 @@ body {
     flex-direction: column;
     padding: 5px;
     justify-content: center;
+    max-width: 400px;
 }
 
 .music-controls > div {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -82,13 +84,14 @@ body {
 
 .music-controls-buttons {
     padding-bottom: 3px;
+    gap: 10px;
 }
 
 .progress-bar, .volume-bar {
     width: 100%;
     height: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
     background-color: rgb(118, 118, 118);
     position: relative;
 }
@@ -117,11 +120,11 @@ body {
     font-size: 11px;
 }
 
-.current-playing-song-text span:last-child, .current-playing-song-buttons {
+.current-playing-song-text div:last-child, .current-playing-song-buttons {
     color: rgb(118, 118, 118);
 }
 
-.current-playing-song-text span:last-child, .volume-buttons > i {
+.current-playing-song-text div:last-child, .volume-buttons > i {
     font-size: 9px;
 }
 
@@ -129,6 +132,9 @@ body {
     width: calc(100% - 40px);
     height: calc(100vh - 70px);
     background-color: #141922;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .upgrade-section {
@@ -136,7 +142,7 @@ body {
     align-items: center;
     justify-content: flex-end;
     padding: 25px 10px;
-    background-color: #21232A;
+    background-color: #080B12;
 }
 
 a {
@@ -148,7 +154,7 @@ a {
     border-radius: 20px;
     border: 1px solid white;
     padding: 10px 20px;
-    background-color: #37393F;
+    background-color: transparent;
     font-size: 12px;
 }
 
@@ -170,12 +176,13 @@ a {
 }
 
 .categories-section ul li:first-child a::after {
-    width: 20%;
+    content: "";
+    width: 30px;
     height: 3px;
     background-color: limegreen;
     position: absolute;
-    left: 50%;
-    bottom: 20%;
+    left: calc(50% - 15px);
+    bottom: 0;
 }
 
 .categories-section ul li a {
@@ -188,15 +195,27 @@ a {
     overflow: hidden;
 }
 
+.scroll-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
 .categories-section, .album-gallery-container {
     padding: 0 15px;
+}
+
+.album-gallery-container {
+    overflow: auto;
+    flex-grow: 1;
+    max-height: 100%;
 }
 
 .album-gallery {
     display: flex;
     flex-wrap: wrap;
+    flex-grow: 1;
     gap: 8px;
-    overflow: auto;
 }
 
 .album-gallery-container-title {
@@ -205,10 +224,19 @@ a {
 
 .album {
     width: calc(100% / 2 - 4px);
+    margin-bottom: 5px;
 }
 
 .albul-cover, .album-cover > img {
     width: 100%;
+}
+
+.album-cover img {
+    max-width: 300px;
+}
+
+.album-cover {
+    text-align: center;
 }
 
 .album-title {
@@ -242,6 +270,17 @@ a {
     line-height: 35px;
 }
 
+.playlist-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+}
+
+.playlist-container ul {
+    flex-grow: 1;
+    overflow: auto;
+}
+
 .main-container-left a {
     color: rgb(118, 118, 118);
     font-weight: 600;
@@ -255,16 +294,22 @@ a {
     display: inline;
 }
 
+.volume-bar {
+    max-width: 150px;
+}
+
 
 
 /************* Media queries *************/
 
+/* mobile */
 @media screen and (max-width: 420px) {
     .display-xs-none {
         display: none;
     }
 }
 
+/* ipad mini */
 @media screen and (min-width: 421px) and (max-width: 768px) {
     .main-container-left {
         width: 300px;
@@ -280,5 +325,121 @@ a {
     }
     .main-container-left span {
         padding: 0 10px;
+    }
+    .controls-container i {
+        font-size: 15px;
+        padding: 5px;
+    }
+    .controls-container .fa-play-circle {
+        font-size: 30px;
+    }
+    .music-controls {
+        padding: 0 20px;
+    }
+    .current-playing-song img {
+        width: 45px;
+        padding: 3px;
+    }
+    .current-playing-song-text div:last-child {
+        font-size: 11px;
+    }
+    .categories-section ul li a {
+        font-size: 15px;
+    }
+    .categories-section ul {
+        gap: 16px;
+    }
+    .album-gallery-container-title {
+        font-size: 25px;
+        padding: 30px 0;
+    }
+    .categories-section, .album-gallery-container {
+        padding: 0 30px;
+    }
+    .album-title {
+        font-size: 17px;
+    }
+    .album-subtitle {
+        font-size: 14px;
+    }
+}
+
+/* ipad pro 11" */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .main-container-left {
+        width: 300px;
+        padding: 0 20px;
+        height: calc(100vh - 100px);
+    }
+    .main-container-left img {
+        width: 20%;
+    }
+    .main-container-left a {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+    }
+    .main-container-left span {
+        padding: 0 10px;
+    }
+    .main-container-right {
+        height: calc(100vh - 100px);
+    }
+    .controls-container {
+        padding: 5px 0;
+        height: 100px;
+    }
+    .controls-container i {
+        font-size: 20px;
+        padding: 5px;
+    }
+    .controls-container .fa-play-circle {
+        font-size: 40px;
+    }
+    .music-controls {
+        padding: 0 20px;
+    }
+    .current-playing-song img {
+        width: 60px;
+        padding: 3px;
+    }
+    .current-playing-song-text {
+        margin-left: -25px;
+    }
+    .current-playing-song-text div:first-child {
+        font-size: 16px;
+    }
+    .current-playing-song-text div:last-child {
+        font-size: 14px;
+    }
+    .categories-section ul li a {
+        font-size: 16px;
+    }
+    .categories-section ul {
+        gap: 16px;
+    }
+    .album-gallery-container-title {
+        font-size: 30px;
+        padding: 30px 0;
+    }
+    .categories-section, .album-gallery-container {
+        padding: 0 30px;
+    }
+    .album {
+        width: calc(100% / 4 - 6px);
+    }
+    .album-title {
+        font-size: 19px;
+    }
+    .album-subtitle {
+        font-size: 16px;
+    }
+    .upgrade-section {
+        padding: 30px 15px;
+    }
+    .upgrade-section button {
+        border-radius: 30px;
+        padding: 20px 40px;
+        font-size: 16px;
     }
 }
